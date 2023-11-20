@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/GTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textViewHikeName"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="Hike Name: "
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/dataTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text=" Data from here"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GTitle"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Location: "/>
+
+        <TextView
+            android:id="@+id/dataLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GLocation"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:text="Date: "/>
+
+        <TextView
+            android:id="@+id/dataDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GDate"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewLength"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:text="Length: "/>
+
+        <TextView
+            android:id="@+id/dataLength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GLength"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewLevel"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="Level of Difficulty: "/>
+
+        <TextView
+            android:id="@+id/dataLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GLevel"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Description: "/>
+
+        <TextView
+            android:id="@+id/dataDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GParking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GDescription"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewParking"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Parking: "/>
+
+        <TextView
+            android:id="@+id/dataParking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GParking"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewRate"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:text="Rating: "/>
+
+        <TextView
+            android:id="@+id/dataRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/GRate"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textViewWeather"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Weather: "/>
+
+        <TextView
+            android:id="@+id/dataWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data from here"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Main">
+
+  <TextView
+      android:id="@+id/welcomeMessage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Welcome to M-Hike!"
+      android:textSize="24sp"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="50dp" />
+  <Button
+      android:id="@+id/plannedHikesButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Planned Hikes"
+      android:layout_below="@id/welcomeMessage"
+      android:layout_marginTop="20dp"
+      android:layout_centerHorizontal="true"
+      android:onClick="onPlannedHikesButtonClick" />
+
+  <Button
+      android:id="@+id/newHikeButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Record New Hike"
+      android:layout_below="@id/plannedHikesButton"
+      android:layout_marginTop="20dp"
+      android:layout_centerHorizontal="true"
+      android:onClick="movetoaddhike" />
+
+
+</RelativeLayout>
