@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
+import android.widget.SearchView;
 
 import com.example.hikecw.Database.HikeDB;
-import com.example.hikecw.Module.HikeMD;
+import com.example.hikecw.Model.HikeModel;
 import com.example.hikecw.MyAdapter.HikeAdapter;
 import com.example.hikecw.R;
 
@@ -18,9 +20,9 @@ public class ListPlan extends AppCompatActivity {
 
     RecyclerView listRV;
 
-    ArrayList<HikeMD> MD;
-
+    ArrayList<HikeModel> MD;
     HikeAdapter hAdapter;
+    SearchView search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +30,38 @@ public class ListPlan extends AppCompatActivity {
         setContentView(R.layout.activity_list_plan);
 
         fetchHikeData();
+        search();
     }
 
     private void fetchHikeData() {
         listRV = findViewById(R.id.rv);
         HikeDB db = new HikeDB(this);
-        MD = db.fetchHData();
-        hAdapter = new HikeAdapter(this,MD);
+        MD = db.getHikeData();
+        hAdapter = new HikeAdapter(this,MD, MD);
         listRV.setAdapter(hAdapter);
         listRV.setLayoutManager( new LinearLayoutManager(this));
+    }
+
+    public void search() {
+        search = findViewById(R.id.search);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        search.setMaxWidth(Integer.MAX_VALUE);
+
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                hAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                hAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
     }
 
 

@@ -1,6 +1,6 @@
-package com.example.hikecw.Module;
+package com.example.hikecw.Model;
 
-public class HikeMD {
+public class HikeModel {
     private  int id;
     private  String hikeName;
     private  String location;
@@ -12,7 +12,7 @@ public class HikeMD {
     private int rate;
     private String weather;
 
-    public HikeMD(int id, String hikeName, String location, String date, Float length, String level, String description,int parking,int rate,String weather) {
+    public HikeModel(int id, String hikeName, String location, String date, Float length, String level, String description, int parking, int rate, String weather) {
         this.id = id;
         this.hikeName = hikeName;
         this.location = location;

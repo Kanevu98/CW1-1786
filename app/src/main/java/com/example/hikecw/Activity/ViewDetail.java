@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -14,6 +16,8 @@ import com.example.hikecw.R;
 public class ViewDetail extends AppCompatActivity {
 
     TextView txvName,txvLocation, txvDate, txvLength,txvLevel, txvDescription, txvParking, txvRate, txvWeather;
+
+    Button addObservation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,5 +50,21 @@ public class ViewDetail extends AppCompatActivity {
 
     }
 
+    private int getHikeId() {
+        Intent i = getIntent();
+        return i.getIntExtra("id", 0);
+    }
 
+
+    public void addObservation(View view) {
+        Intent i = new Intent(ViewDetail.this, AddObservation.class);
+        i.putExtra("hike_ref", getHikeId());
+        startActivity(i);
+    }
+
+    public void ViewObservation_click(View view) {
+        Intent i = new Intent(ViewDetail.this, ObservationDetails.class);
+        i.putExtra("hike_ref", getHikeId());
+        startActivity(i);
+    }
 }
