@@ -33,6 +33,7 @@ public class AddHike extends AppCompatActivity {
     }
 
     private void insertData(){
+
         btnSave = (Button) findViewById(R.id.buttonSaveHike);
 
         ip_name = findViewById(R.id.editTextHikeName);
@@ -45,25 +46,34 @@ public class AddHike extends AppCompatActivity {
 
         int ratingV = 0;
 
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    DB = new HikeDB(AddHike.this);
-                    DB.addHike(
-                            ip_name.getText().toString().trim(),
-                            ip_location.getText().toString().trim(),
-                            ip_date.getText().toString().trim(),
-                            getParking(),
-                            Float.parseFloat(ip_length.getText().toString().trim()),
-                            ip_level.getText().toString().trim(),
-                            ip_description.getText().toString().trim(),
-                            getRating(),
-                            ip_weatherF.getText().toString().trim()
-                    );
-                    finish();
-                }catch (Exception e){
-                    Toast.makeText(AddHike.this, e.toString(), Toast.LENGTH_LONG);
+                if(ip_name.getText().toString().length() == 0 ||
+                        ip_location.getText().toString().length() == 0 ||
+                        ip_date.getText().toString().length() == 0 ||
+                        ip_length.getText().toString().length() == 0 ||
+                        ip_level.getText().toString().length() == 0) {
+                    Toast.makeText(AddHike.this, "Fill all information", Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        DB = new HikeDB(AddHike.this);
+                        DB.addHike(
+                                ip_name.getText().toString().trim(),
+                                ip_location.getText().toString().trim(),
+                                ip_date.getText().toString().trim(),
+                                getParking(),
+                                Float.parseFloat(ip_length.getText().toString().trim()),
+                                ip_level.getText().toString().trim(),
+                                ip_description.getText().toString().trim(),
+                                getRating(),
+                                ip_weatherF.getText().toString().trim()
+                        );
+                        finish();
+                    }catch (Exception e){
+                        Toast.makeText(AddHike.this, e.toString(), Toast.LENGTH_LONG);
+                    }
                 }
             }
         });
