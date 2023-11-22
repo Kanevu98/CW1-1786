@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SearchView;
 
 import com.example.hikecw.Database.HikeDB;
@@ -62,6 +64,11 @@ public class ListPlan extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void addHike_click(View view) {
+        Intent i = new Intent(ListPlan.this, AddHike.class);
+        startActivity(i);
     }
 
 

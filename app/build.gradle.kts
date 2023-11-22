@@ -5,7 +5,6 @@ plugins {
 android {
     namespace = "com.example.hikecw"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.example.hikecw"
         minSdk = 27

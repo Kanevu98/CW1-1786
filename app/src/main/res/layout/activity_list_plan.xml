@@ -35,4 +35,20 @@
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="560dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addHike"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New Hike"
+            android:onClick="addHike_click"/>
+
+
+    </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

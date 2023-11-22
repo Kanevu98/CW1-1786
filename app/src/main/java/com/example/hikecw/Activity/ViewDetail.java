@@ -43,10 +43,31 @@ public class ViewDetail extends AppCompatActivity {
         txvDate.setText(i.getStringExtra("date"));
         txvLength.setText(String.valueOf(i.getFloatExtra("length",0.0f)));
         txvLevel.setText(i.getStringExtra("level"));
-        txvDescription.setText(i.getStringExtra("description"));
-        txvParking.setText(String.valueOf(i.getIntExtra("parking",0)));
-        txvRate.setText(String.valueOf(i.getIntExtra("rate", 0)));
         txvWeather.setText(i.getStringExtra("weather"));
+        txvDescription.setText(i.getStringExtra("description"));
+
+        int parking= i.getIntExtra("parking",0);
+        if(parking == 1) {
+            txvParking.setText("Have parking");
+        } else {
+            txvParking.setText("Don't parking");
+        }
+        int rating = i.getIntExtra("rate", 0);
+        if(rating == 1) {
+            txvRate.setText("1 star");
+        }
+        if(rating == 2) {
+            txvRate.setText("2 star");
+        }
+        if(rating == 3) {
+            txvRate.setText("3 star");
+        }
+        if(rating == 4) {
+            txvRate.setText("4 star");
+        }
+        if(rating == 5) {
+            txvRate.setText("5 star");
+        }
 
     }
 
@@ -54,7 +75,6 @@ public class ViewDetail extends AppCompatActivity {
         Intent i = getIntent();
         return i.getIntExtra("id", 0);
     }
-
 
     public void addObservation(View view) {
         Intent i = new Intent(ViewDetail.this, AddObservation.class);
